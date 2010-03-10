@@ -11,7 +11,7 @@ class AdvertTest < Test::Unit::TestCase
       @ip = "212.58.246.158" # bbc.co.uk
       @id = "12334"
       
-      @ad = Advert.new
+      @ad = RingRingMedia::Advert.new
     end
     should "Return advert from a http GET" do
       stub_request(:get, "http://iam.ringringmedia.com/index.php?pid=#{@id}&ua=#{@iphone_useragent}&rt=ar&mo=test&ira=#{@ip}&e=UTF-8&mu=xml").to_return(:body => @XML_response, :status => 200)
